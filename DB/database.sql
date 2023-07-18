@@ -1,12 +1,23 @@
 create database Banco;
 
 
+Create table user(
+   id_user  int primary key,
+   correo  varchar(400) primary key,
+   contrasena varchar(400) 
+ )
+
+
 Create table Cliente(
-   ID_Cliente  int primary key,
+   DPI  varchar(400) primary key,
+   Pasaporte  varchar(400) primary key,
    Nombre varchar(400), 
    Apellido varchar(400),
+   Razon_social varchar(400),
+   Municipio varchar(400),
+   Departamento varchar(400),
    Direccion varchar(400),
-   Teléfono varchar(400),
+   Telefono varchar(400),
    Correo  varchar(400)
  )
 
