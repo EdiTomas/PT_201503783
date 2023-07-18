@@ -1,16 +1,19 @@
 create database Banco;
 
+create database Banco;
+use Banco;
 
-Create table user(
+Create table Usuario(
    id_user  int primary key,
-   correo  varchar(400) primary key,
-   contrasena varchar(400) 
+   nombre  varchar(400),  -- Funcionario
+   Correo  varchar(400),
+   Password varchar(400)
  )
 
 
 Create table Cliente(
    DPI  varchar(400) primary key,
-   Pasaporte  varchar(400) primary key,
+   Pasaporte  varchar(400),
    Nombre varchar(400), 
    Apellido varchar(400),
    Razon_social varchar(400),
@@ -18,44 +21,55 @@ Create table Cliente(
    Departamento varchar(400),
    Direccion varchar(400),
    Telefono varchar(400),
-   Correo  varchar(400)
- )
+   Correo  varchar(400),
+   id_user1 int,
+   CONSTRAINT fk_id_user FOREIGN KEY (id_user1) REFERENCES Usuario (id_user),
+)
 
 
 
 Create table Cuenta_Ahorros(
    ID_Cuenta  varchar(400) primary key,
-   Saldo float,
+   Saldo decimal(10,2),
    Estado int,
-   Fecha varchar(400),
+   Fecha date,
    Telefono varchar(400),
-   Moneda varchar(400),
+   Moneda decimal(10,2) ,
    ID_Cliente varchar(400),  --(FK)
-   
-)
+   id_user2 int,--(FK)
+   CONSTRAINT fk_id_user2 FOREIGN KEY (id_user2) REFERENCES Usuario (id_user),
+   CONSTRAINT fk_ID_Cliente FOREIGN KEY (ID_Cliente) REFERENCES Cliente (DPI),
 
-
-Create table Transaccion(
-   ID_Transacción varchar(400) primary key,
-   Tipo_de_Transaccion varchar(10)
-   Monto float,
-   Saldo_Resultante float,
-   Fecha varchar(400),
-   ID_Cuenta varchar(400), --(FK) 
-   ID_Cajero  int --(FK)
 )
 
 Create table Agencia(
    ID_Agencia  int primary key,
    Nombre varchar(400)
-   
 )
 
 Create table Cajero(
    ID_Cajero  int primary key,
    Nombre varchar(400),
-   ID_Agencia  int --(FK)
+   ID_Agencia1  int --(FK)
+   CONSTRAINT fk_ID_Agencia FOREIGN KEY (ID_Agencia1) REFERENCES Agencia (ID_Agencia),
 )
+--drop table Cajero;
+
+Create table Transaccion(
+   ID_Transacción varchar(400) primary key,
+   Tipo_de_Transaccion varchar(10),
+   Monto Decimal(10,2),
+   Saldo_Resultante Decimal(10,2),
+   Fecha Date,
+   ID_Cuenta1 varchar(400), --(FK) 
+   ID_Cajero1  int, --(FK)
+   id_user3 int,
+   CONSTRAINT fk_id_user3 FOREIGN KEY (id_user3) REFERENCES Usuario (id_user),
+   CONSTRAINT fk_ID_Cuenta1 FOREIGN KEY (ID_Cuenta1) REFERENCES Cuenta_Ahorros (ID_Cuenta),
+   CONSTRAINT fk_ID_Cajero1 FOREIGN KEY (ID_Cajero1) REFERENCES Cajero (ID_Cajero),
+)
+
+
 
 
 --a. Consulta para visualizar a todos los clientes con su número de cuentas de ahorro activas y no activas:
