@@ -1,5 +1,6 @@
 @extends('app');
 
+@include('nav');
 
 @section('content')
 
@@ -9,17 +10,27 @@
 <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">
   Transacciones
 </button>
-</div>
+</div>  
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">Crear Cuenta</h1>
+        <h1 class="modal-title fs-5" id="transacciones">Agregar Transacciones</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
   <form>
+
+  <div class="row">
+    <div class="col">
+         <input type="text" class="form-control" placeholder="First name" aria-label="First name">
+    </div>
+    <div class="col">
+         <input type="text" class="form-control" placeholder="Last name" aria-label="Last name">
+    </div>
+  </div>
+
   <div class="mb-6">
           <label for="name" class="form-label">Nombre del cliente</label>
           <input type="text" class="form-control" name="name" >

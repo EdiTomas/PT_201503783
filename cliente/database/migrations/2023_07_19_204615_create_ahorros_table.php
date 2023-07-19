@@ -12,7 +12,15 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('ahorros', function (Blueprint $table) {
-            $table->id();
+            $table->integer('Id_Cuenta')->primary()->unique()->increments();
+            $table->decimal('Saldo',10,2);
+            $table->integer('Estado');
+            $table->date('Fecha');
+            $table->string('Moneda',20);
+            $table->string('ID_Cliente',400);
+            $table->integer('iduser2');
+            $table->foreign('ID_Cliente')->references('DPI')->on('clientes');
+            $table->foreign('iduser2')->references('id')->on('users');
             $table->timestamps();
         });
     }

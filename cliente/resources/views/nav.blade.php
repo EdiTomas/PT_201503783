@@ -1,6 +1,5 @@
-@section('content')
-
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
+<div class="container mt-0">
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">Guatemala</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -8,9 +7,11 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
-        <li class="nav-item">
+        
+      <li class="nav-item">
           <a class="nav-link" aria-current="page" href="#">Creacion de Cuenta</a>
         </li>
+
         <li class="nav-item">
           <a class="nav-link" href="#">Transacciones</a>
         </li>
@@ -21,5 +22,5 @@
     </div>
   </div>
 </nav>
-@endsection
+</div>
 
