@@ -7,7 +7,7 @@
 <div class="container w-10   mt-4" >
 
 <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">
-  Crear Cuenta
+  Transacciones
 </button>
 </div>
 <!-- Modal -->
@@ -56,24 +56,32 @@
 <table   class="table"  >
   <thead>
     <tr>
-      <th scope="col">#ID_CUENTA</th>
+    <th scope="col">#</th>
+    <th scope="col">ID_Transacción</th>
+      <th scope="col">Tipo Transaccion</th>
+      <th scope="col">Monto</th>
       <th scope="col">Saldo</th>
-      <th scope="col">Moneda</th>
-      <th scope="col">Estado</th>
       <th scope="col">Fecha</th>
-      <th scope="col">Cliente</th>
+      <th scope="col">Cuenta</th>
+      <th scope="col">Cajero</th>
       <th scope="col">Accion</th>
+
+
+
+
 
     </tr>
   </thead>
   <tbody>
     <tr>
       <th scope="row">1</th>
-      <td>5.00</td>
-      <td>GTQ</td>
-      <td>Activo</td>
+      <th >B45678</th>
+      <td>Deposito</td>
+      <td>5000</td>
+      <td>10000</td>
       <td>18/07/2023</td>
-      <td>Edi</td>
+      <td>A1-0124541</td>
+      <td>Ruben</td>
       <td>
         <button type="button" class="btn btn-primary">Actualizar</button>
         <button type="button" class="btn btn-secondary">Eliminar</button>
@@ -81,25 +89,29 @@
     
     </tr>
     <tr>
-      <th scope="row">1</th>
-        <td>5.00</td>
-        <td>GTQ</td>
-        <td>Activo</td>
-        <td>18/07/2023</td>
-        <td>Edi</td>
-        <td>
-          <button type="button" class="btn btn-primary">Actualizar</button>
-          <button type="button" class="btn btn-secondary">Eliminar</button>
-        </td>
+    <th scope="row">2</th>
+    <th >B45678</th>
+    <td>Deposito</td>
+      <td>5000</td>
+      <td>10000</td>
+      <td>18/07/2023</td>
+      <td>A1-0124541</td>
+      <td>Alejandro</td>
+      <td>
+        <button type="button" class="btn btn-primary">Actualizar</button>
+        <button type="button" class="btn btn-secondary">Eliminar</button>
+      </td>
     
     </tr>
     <tr>
-    <th scope="row">1</th>
-      <td>5.00</td>
-      <td>USD</td>
-      <td>Inactivo</td>
+    <th scope="row">3</th>
+    <th >B45678</th>
+    <td>Retiro</td>
+      <td>5000</td>
+      <td>5000  </td>
       <td>18/07/2023</td>
-      <td>Edi</td>
+      <td>A1-0124541</td>
+      <td>Alejandro</td>
       <td>
         <button type="button" class="btn btn-primary">Actualizar</button>
         <button type="button" class="btn btn-secondary">Eliminar</button>

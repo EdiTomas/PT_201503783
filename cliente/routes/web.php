@@ -20,6 +20,12 @@ Route::get('/login', function () {
     return view('Login.index');
 });
 
+Route::get('/Ahorro', function () {
+    return view('CuentaAhorro.index');
+});
 
+Route::get('/Operaciones', function () {
+    return view('Transacciones.index');
+});
 
 
