@@ -23,24 +23,24 @@ Create table Cliente(
    Telefono varchar(400),
    Correo  varchar(400),
    id_user1 int,
-   CONSTRAINT fk_id_user FOREIGN KEY (id_user1) REFERENCES Usuario (id_user),
+   CONSTRAINT fk_id_user FOREIGN KEY (id_user1) REFERENCES Usuario (id_user)
 )
 
 
 
-Create table Cuenta_Ahorros(
-   ID_Cuenta  varchar(400) primary key,
-   Saldo decimal(10,2),
-   Estado int,
-   Fecha date,
-   Telefono varchar(400),
-   Moneda decimal(10,2) ,
-   ID_Cliente varchar(400),  --(FK)
-   id_user2 int,--(FK)
-   CONSTRAINT fk_id_user2 FOREIGN KEY (id_user2) REFERENCES Usuario (id_user),
-   CONSTRAINT fk_ID_Cliente FOREIGN KEY (ID_Cliente) REFERENCES Cliente (DPI),
+    Create table Cuenta_Ahorros(
+    ID_Cuenta  varchar(400) primary key,
+    Saldo decimal(10,2),
+    Estado int,
+    Fecha date,
+    Telefono varchar(400),
+    Moneda decimal(10,2) ,
+    ID_Cliente varchar(400),  --(FK)
+    id_user2 int,--(FK)
+    CONSTRAINT fk_id_user2 FOREIGN KEY (id_user2) REFERENCES Usuario (id_user),
+    CONSTRAINT fk_ID_Cliente FOREIGN KEY (ID_Cliente) REFERENCES Cliente (DPI)
 
-)
+    )
 
 Create table Agencia(
    ID_Agencia  int primary key,
@@ -50,8 +50,8 @@ Create table Agencia(
 Create table Cajero(
    ID_Cajero  int primary key,
    Nombre varchar(400),
-   ID_Agencia1  int --(FK)
-   CONSTRAINT fk_ID_Agencia FOREIGN KEY (ID_Agencia1) REFERENCES Agencia (ID_Agencia),
+   ID_Agencia1  int, --(FK)
+   CONSTRAINT fk_ID_Agencia FOREIGN KEY (ID_Agencia1) REFERENCES Agencia (ID_Agencia)
 )
 --drop table Cajero;
 
@@ -66,7 +66,7 @@ Create table Transaccion(
    id_user3 int,
    CONSTRAINT fk_id_user3 FOREIGN KEY (id_user3) REFERENCES Usuario (id_user),
    CONSTRAINT fk_ID_Cuenta1 FOREIGN KEY (ID_Cuenta1) REFERENCES Cuenta_Ahorros (ID_Cuenta),
-   CONSTRAINT fk_ID_Cajero1 FOREIGN KEY (ID_Cajero1) REFERENCES Cajero (ID_Cajero),
+   CONSTRAINT fk_ID_Cajero1 FOREIGN KEY (ID_Cajero1) REFERENCES Cajero (ID_Cajero)
 )
 
 
