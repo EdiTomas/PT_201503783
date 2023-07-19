@@ -12,7 +12,7 @@ class ClienteController extends Controller
     public function store(Request $request){
         $request->validate([
             'DPI'=>'required'
-        ]);
+    ]);
 /*
         $table->string('DPI',400)->primary()->unique();
         $table->string('Nombre',400);
@@ -51,4 +51,14 @@ class ClienteController extends Controller
         $ahorro->save();
         return redirect()->router('Ahorro')->with('success','Se ha insertado correctamente');
    }
+
+   public function index(){
+    $clientes  =  Cliente::all();  
+    return view('Ahorro.index',['clientes'=>$clientes]);
+  //  return view('CuentaAhorro.index');
+    
+    // return redirect()->router('Ahorro')->with('success','Se ha insertado correctamente');   
+}
+
+
 }

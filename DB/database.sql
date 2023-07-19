@@ -70,6 +70,24 @@ Create table Transaccion(
 
 
 
+insert into users (name,email,password)  values('Edi','tomas3320141@gmail.com','1234')
+select * from users;
+
+--(DPI,Nombre,Apellido,Razon_social,Municipio,Departamento,Direccion,Telefono,Correo,iduser1)  
+
+insert into clientes 
+values
+('5263987852369','Juan Alfonso','Perez Castos','','Guatemala','Guatemala',
+ 'Lote 10 sector','40133268','tomas3320131@gmail.com',1),
+('2687635125698','Pedro Ricardo','LopezLopez','','Mixco','Guatemala',
+ 'Lote 10 sector','40133268','tomas3320121@gmail.com',1);
+
+select * from clientes
+select * from ahorros
+select * from users
+
+
+
 --a. Consulta para visualizar a todos los clientes con su número de cuentas de ahorro activas y no activas:
 
 

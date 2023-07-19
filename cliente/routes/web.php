@@ -21,9 +21,11 @@ Route::get('/login', function () {
     return view('Login.index');
 });
 
-Route::get('/Ahorro', function () {
+/*Route::get('/Ahorro', function () {
     return view('CuentaAhorro.index');
 });
+*/
+Route::get('/Ahorro',[ClienteController::class,'index'] )->name('Ahorro');
 
 Route::post('/Ahorro',[ClienteController::class,'store'] )->name('Ahorro');
 Route::post('/Login',[LoginController::class,'store'] )->name('Login');

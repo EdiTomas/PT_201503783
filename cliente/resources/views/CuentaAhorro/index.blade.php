@@ -92,6 +92,8 @@
     </div>
   </div>
 </div>
+
+
 <div class="container w-10   mt-4" >
 <table   class="table"  >
   <thead>
@@ -108,44 +110,26 @@
   </thead>
   <tbody>
     <tr>
-      <th scope="row">1</th>
+    @foreach($clientes as $client)
+    
+
+    <th scope="row">1</th>
       <td>5.00</td>
       <td>GTQ</td>
       <td>Activo</td>
       <td>18/07/2023</td>
-      <td>Edi</td>
+      <td>{{$client->Nombre}}</td>
       <td>
         <button type="button" class="btn btn-primary">Actualizar</button>
         <button type="button" class="btn btn-secondary">Eliminar</button>
       </td>
+
+    @endforeach
+
+
     
     </tr>
-    <tr>
-      <th scope="row">1</th>
-        <td>5.00</td>
-        <td>GTQ</td>
-        <td>Activo</td>
-        <td>18/07/2023</td>
-        <td>Edi</td>
-        <td>
-          <button type="button" class="btn btn-primary">Actualizar</button>
-          <button type="button" class="btn btn-secondary">Eliminar</button>
-        </td>
     
-    </tr>
-    <tr>
-    <th scope="row">1</th>
-      <td>5.00</td>
-      <td>USD</td>
-      <td>Inactivo</td>
-      <td>18/07/2023</td>
-      <td>Edi</td>
-      <td>
-        <button type="button" class="btn btn-primary">Actualizar</button>
-        <button type="button" class="btn btn-secondary">Eliminar</button>
-      </td>
-    
-    </tr>
   </tbody>
 </table>
 </div>
