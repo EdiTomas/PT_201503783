@@ -12,19 +12,17 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('transaccions', function (Blueprint $table) {
-          
-            $table->id('ID_Transaccion')->primary()->unique()->increments();
+            $table->integer('ID_Transaccion')->primary()->unique()->increments();
             $table->decimal('Monto',10,2);
             $table->decimal('Saldo_Restante',10,2);
             $table->date('Fecha');
             $table->integer('iduser3');
             $table->integer('ID_Cajero1');
-            $table->integer('ID_Cuenta1');
-            $table->foreign('ID_Cuenta1')->references('ID_Cuenta')->on('ahorros');
-            $table->foreign('ID_Cajero1')->references('ID_cajero')->on('cajeros');
-            $table->foreign('iduser3')->references('id')->on('Users');
+            $table->integer('Id_Cuenta1');
+            $table->foreign('Id_Cuenta1')->references('Id_Cuenta')->on('ahorros');
+            $table->foreign('ID_Cajero1')->references('ID_Cajero')->on('cajeros');
+            $table->foreign('iduser3')->references('id')->on('users');
             $table->timestamps();
-
         });
     }
 

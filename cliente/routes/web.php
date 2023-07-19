@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\ClienteController;
+use App\Http\Controllers\LoginController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -23,6 +24,11 @@ Route::get('/login', function () {
 Route::get('/Ahorro', function () {
     return view('CuentaAhorro.index');
 });
+
+Route::post('/Ahorro',[ClienteController::class,'store'] )->name('Ahorro');
+Route::post('/Login',[LoginController::class,'store'] )->name('Login');
+
+
 
 Route::get('/Operaciones', function () {
     return view('Transacciones.index');

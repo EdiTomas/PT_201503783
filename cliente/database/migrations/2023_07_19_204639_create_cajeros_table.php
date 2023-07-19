@@ -9,21 +9,16 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
-
-
-     /*
-     Create table Agencia(
-   ID_Agencia  int primary key,
-   Nombre varchar(400)
-)
-     */
     public function up(): void
     {
-        Schema::create('agencias', function (Blueprint $table) {
-            //$table->id();
-            $table->id('ID_Agencia')->primary()->unique()->increments();
+        Schema::create('cajeros', function (Blueprint $table) {
+            $table->integer('ID_Cajero')->primary()->unique()->increments();
             $table->string('Nombre',400);
-            $table->timestamps();
+            $table->integer('ID_Agencia1');
+            $table->foreign('ID_Agencia1')->references('ID_Agencia')->on('agencias');
+            $table->timestamps(); 
+
+
         });
     }
 
@@ -32,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('agencias');
+        Schema::dropIfExists('cajeros');
     }
 };
