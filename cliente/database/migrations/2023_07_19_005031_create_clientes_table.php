@@ -29,16 +29,17 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('clientes', function (Blueprint $table) {
-            $table->id();
-            $table->string('DPI');
-            $table->string('Pasaporte');
-            $table->string('Nombre');
-            $table->string('Apellido');
-            $table->string('Apellido');
-
-
-
-
+            $table->string('DPI',400)->primary()->unique();
+            $table->string('Nombre',400);
+            $table->string('Apellido',400);
+            $table->string('Razon_social',400);
+            $table->string('Municipio',400);
+            $table->string('Departamento',400);
+            $table->string('Direccion',400);
+            $table->string('Telefono',400);
+            $table->string('Correo',400)->unique();
+            $table->integer('iduser1');
+            $table->foreign('iduser1')->references('id')->on('users');
             $table->timestamps();
         });
     }

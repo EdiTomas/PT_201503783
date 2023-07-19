@@ -9,28 +9,10 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
-   /*
-   Create table Transaccion(
-   ID_Transacción varchar(400) primary key,
-   Tipo_de_Transaccion varchar(10),x
-   Monto Decimal(10,2),
-   Saldo_Resultante Decimal(10,2),
-   Fecha Date,
-   ID_Cuenta1 varchar(400), --(FK) 
-   ID_Cajero1  int, --(FK)
-   id_user3 int,
-   CONSTRAINT fk_id_user3 FOREIGN KEY (id_user3) REFERENCES Usuario (id_user),
-   CONSTRAINT fk_ID_Cuenta1 FOREIGN KEY (ID_Cuenta1) REFERENCES Cuenta_Ahorros (ID_Cuenta),
-   CONSTRAINT fk_ID_Cajero1 FOREIGN KEY (ID_Cajero1) REFERENCES Cajero (ID_Cajero)
-)
-   
-   */
-
-
     public function up(): void
     {
-        Schema::create('transacciones', function (Blueprint $table) {
-            //$table->string('DPI',400)->primary()->unique();
+        Schema::create('transaccions', function (Blueprint $table) {
+          
             $table->id('ID_Transaccion')->primary()->unique()->increments();
             $table->decimal('Monto',10,2);
             $table->decimal('Saldo_Restante',10,2);
@@ -42,6 +24,7 @@ return new class extends Migration
             $table->foreign('ID_Cajero1')->references('ID_cajero')->on('cajeros');
             $table->foreign('iduser3')->references('id')->on('Users');
             $table->timestamps();
+
         });
     }
 
@@ -50,6 +33,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('transacciones');
+        Schema::dropIfExists('transaccions');
     }
 };

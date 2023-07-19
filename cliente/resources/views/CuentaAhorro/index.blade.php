@@ -1,5 +1,6 @@
 @extends('app');
 
+@include('nav');
 
 @section('content')
 
@@ -20,27 +21,70 @@
       </div>
       <div class="modal-body">
   <form>
-  <div class="mb-6">
-          <label for="name" class="form-label">Nombre del cliente</label>
-          <input type="text" class="form-control" name="name" >
+
+  <div class="row">
+    <div class="col">
+         <input type="text" class="form-control" placeholder="Nombre*" aria-label="Nombre">
+    </div>
+    <div class="col">
+         <input type="text" class="form-control" placeholder="Apellido*" aria-label="Apellido">
+    </div>
   </div>
- 
-  <div class="mb-3">
-    <label for="saldo" class="form-label">Saldo</label>
-    <input type="number" class="form-control" name="Saldo" >
+
+  <div class="row">
+    <div class="col">
+         <input type="text" class="form-control" placeholder="Dpi /Pasaporte*" aria-label="Dpi">
+    </div>
+    <div class="col">
+         <input type="number" class="form-control" name="Saldo" placeholder="Saldo*" aria-label="Saldo" >
+    </div>
+    
+
   </div>
-  <div class="mb-3">
-    <label for="Estado" class="form-label">Estado</label>
-    <input type="text" class="form-control" name="Estado" >
+
+  <div class="row">
+    <div class="col">
+         <input type="date" class="form-control" placeholder="Fecha*" aria-label="Fecha">
+    </div>
+    <div class="col">
+         <input type="text" class="form-control" placeholder="Municipio*" aria-label="Municipio">
+    </div>
   </div>
-  <div class="mb-3">
-    <label for="Fecha" class="form-label">Fecha</label>
-    <input type="number" class="form-control" name="Fecha" >
+
+  <div class="row">
+    <div class="col">
+         <input type="text" class="form-control" placeholder="Razon Social*" aria-label="Razon Social">
+    </div>
+    <div class="col">
+         <input type="text" class="form-control" placeholder="Departamento*" aria-label="Departamento">
+    </div>
   </div>
-  <div class="mb-3">
-    <label for="Moneda" class="form-label">Moneda</label>
-    <input type="number" class="form-control" name="Moneda" >
+
+  <div class="row">
+    <div class="col">
+         <input type="text" class="form-control" placeholder="Direccion*" aria-label="Razon Social">
+    </div>
+    <div class="col">
+         <input type="text" class="form-control" placeholder="Telefono*" aria-label="Telefono">
+    </div>
   </div>
+  <div class="row">
+    <div class="col">
+       <select name="pets" id="pet-select">
+                  <option value="">--Eliga la Moneda--</option>
+                  <option value="GTQ">GTQ</option>
+                  <option value="USD">USD</option>
+        </select>
+
+
+    </div>
+
+
+
+
+  </div>
+
+
   
 </form>
 

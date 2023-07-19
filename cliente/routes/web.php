@@ -28,4 +28,7 @@ Route::get('/Operaciones', function () {
     return view('Transacciones.index');
 });
 
+Route::get('/Saldos', function () {
+    return view('Saldos.index');
+});
 
