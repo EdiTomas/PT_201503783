@@ -11,8 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('transacciones', function (Blueprint $table) {
-            $table->id();
+        Schema::create('agencias', function (Blueprint $table) {
+            $table->integer('ID_Agencia')->primary()->unique()->increments();
+            $table->string('Nombre',400);
             $table->timestamps();
         });
     }
@@ -22,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('transacciones');
+        Schema::dropIfExists('agencias');
     }
 };

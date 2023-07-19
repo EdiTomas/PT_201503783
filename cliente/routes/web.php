@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\ClienteController;
+use App\Http\Controllers\LoginController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,12 +21,22 @@ Route::get('/login', function () {
     return view('Login.index');
 });
 
-Route::get('/Ahorro', function () {
+/*Route::get('/Ahorro', function () {
     return view('CuentaAhorro.index');
 });
+*/
+Route::get('/Ahorro',[ClienteController::class,'index'] )->name('Ahorro');
+
+Route::post('/Ahorro',[ClienteController::class,'store'] )->name('Ahorro');
+Route::post('/Login',[LoginController::class,'store'] )->name('Login');
+
+
 
 Route::get('/Operaciones', function () {
     return view('Transacciones.index');
 });
 
+Route::get('/Saldos', function () {
+    return view('Saldos.index');
+});
 
