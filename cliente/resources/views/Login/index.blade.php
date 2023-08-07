@@ -1,7 +1,7 @@
 @extends('app');
 @section('content')
   <div class="container w-25  boder p-4 mt-4">
-      <form action="{{route('Ahorro')}}" method ="POST">
+      <form action="{{route('login')}}" method ="POST">
       @csrf
           <div class="mb-3">
               <label for="exampleInputEmail1" class="form-label">Email address</label>
